@@ -1,0 +1,11 @@
+[Unit]
+Description=kb
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/kb_daemon
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
