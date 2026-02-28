@@ -1,0 +1,93 @@
+---
+- name: configure upgrades
+  hosts: all
+  tasks:
+
+  - name: install
+    ansible.builtin.dnf:
+      name: "python3"
+      state: latest
+    tags:
+      - python3
+
+  - name: deploy motd
+    copy:
+      src: files/motd
+      dest: /etc/motd
+    tags:
+      - motd
+
+  - name: deploy legal notice
+    copy:
+      src: files/issue.txt
+      dest: /etc/issue.txt
+    tags:
+      - motd
+
+  - name: deploy sshd
+    copy:
+      src: files/sshd_config
+      dest: /etc/ssh/sshd_config
+    tags:
+      - sshd
+
+  - name: configure
+    copy:
+      src: files/configure_packages
+      dest: /root/configure_packages.sh
+    tags:
+      - dnf
+
+  - name: configure unit file for kiagateway
+    copy:
+      src: files/kiagateway.service
+      dest: /etc/systemd/system/kiagateway.service
+    tags:
+      - kiagateway
+
+  - name: configure wrapper for kiagateway
+    copy:
+      src: files/gate_daemon
+      dest: /usr/local/bin/gate_daemon
+    tags:
+      - kiagateway
+
+  - name: enforce kiagateway directory
+    ansible.builtin.file:
+      path: /opt/kiagateway
+      state: directory
+      mode: '0755'
+    tags:
+      - kiagateway
+
+  - name: deploy servers.toml for kiagateway
+    copy:
+      src: files/servers.toml
+      dest: /opt/kiagateway/servers.toml
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    tags:
+      - kiagateway
+
+  - name: deploy web content for TEMPLATE
+    copy:
+      src: files/TEMPLATE.tgz
+      dest: /root/TEMPLATE.tgz
+    tags:
+      - TEMPLATE
+
+  - name: configure unit file for TEMPLATE
+    copy:
+      src: files/TEMPLATE.service
+      dest: /etc/systemd/system/TEMPLATE.service
+    tags:
+      - TEMPLATE
+
+  - name: configure wrapper for  TEMPLATE
+    copy:
+      src: files/TEMPLATE_daemon
+      dest: /usr/local/bin/TEMPLATE_daemon
+    tags:
+      - TEMPLATE
