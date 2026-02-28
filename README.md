@@ -1,6 +1,6 @@
 # Sericea Shelterbelt
 
-_Cornus sericea_ also known as a [red dogwood](https://en.wikipedia.org/wiki/Cornus_sericea) is a flowering plant that helps shield areas from wind and has spiritual value in some cultures._
+_Cornus sericea_ also known as a [red dogwood](https://en.wikipedia.org/wiki/Cornus_sericea) is a flowering plant that helps shield areas from wind and has spiritual value in some cultures.
 
 This project is a CentOS Stream 10 server that runs multiple websites or domains. It is a single VM that has domain-based routing within it, maintaining the highest levels of performance and security.
 
