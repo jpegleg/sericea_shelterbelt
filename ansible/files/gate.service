@@ -1,0 +1,11 @@
+[Unit]
+Description=kiagateway
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/gate_daemon
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
