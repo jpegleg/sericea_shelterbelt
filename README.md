@@ -8,9 +8,10 @@ A _shelterbelt_ is [windbreak](https://en.wikipedia.org/wiki/Windbreak) is a row
 
 This project has IaC and service templating, made in reaction to CI failures in [serotinous-cone](https://github.com/jpegleg/serotinous-cone/) and [paludification_toad](https://github.com/jpegleg/paludification_toad/).
 
-The bottom lines with why this project came out on top because `aws-lc-rs` does not support Alpine Linux or OpenBSD effectively, and because Alpine Linux K3S had some CPU utilizastion issues in recent builds.
+The reason this project came into being is because `aws-lc-rs` does not support Alpine Linux or OpenBSD effectively, and because Alpine Linux K3S had some CPU utilizastion issues in recent builds.
 
-If the Paludification Toad is able to improve the TLS key exchange, it may replace the Sericea Shelterbel, but not today.
+The Paludification Toad has since overcome it's hurdles and surpased the Sericea Shelterbelt - so this project is likely already an archive.
+
 
 ## General flow
 
