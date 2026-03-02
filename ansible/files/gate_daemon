@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/local/bin/kiagateway /opt/kiagateway/servers.toml
