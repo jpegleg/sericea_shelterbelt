@@ -1,10 +1,10 @@
 [Unit]
-Description=kb
+Description=TEMPLATE
 After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/kb_daemon
+ExecStart=/usr/local/bin/TEMPLATE_daemon
 TimeoutStartSec=0
 
 [Install]
